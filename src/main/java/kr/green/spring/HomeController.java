@@ -23,7 +23,8 @@ public class HomeController {
 	 * Simply selects the home view to render by returning its name.
 	 */
 	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public String home(Locale locale, Model model) {
+	public String homeGet(Locale locale, Model model) {
+		
 		logger.info("Welcome home! The client locale is {}.", locale);
 		
 		Date date = new Date();
@@ -35,8 +36,11 @@ public class HomeController {
 		
 		return "home";
 	}
-	@RequestMapping(value="/test", method=RequestMethod.GET)
-	public String testGet() {
-		return "test";
+	
+	@RequestMapping(value = "/", method = RequestMethod.POST)
+	public String homePost(String name) {
+		System.out.println("jsp에서 넘어온 값: " +name);
+		return "redirect:/"; //jsp파일을 직접 부르는게 아니고 내가부르고자하는 URI를 호출하는 값을 다시 호출
 	}
+
 }
