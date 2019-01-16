@@ -11,3 +11,31 @@ Message /spring/WEB-INF/views/test.jsp
 Description The origin server did not find a current 
 원인 : WEB-INF/views/ 경로에 test.jsp가 없어서
 해결 : WEB-INF/views/ 경로에 test.jsp를 추가
+
+
+Injection of autowired dependencies failed;
+원인 : servlet-context.xml 파일에 component-scan base-package가 service패키지나 dao패키지를 포함하지 못할때
+해결 : servlet-context.xml 파일에 component-scan base-package의 값을 모든 패키지가 포함되도록 한다.
+예시 : <context:component-scan base-package="kr.green.spring" />
+
+
+Unable to load authentication plugin 'caching_sha2_password'
+원인 : pom.xml에 추가한 mysql-connector-java와 mysql 버전이 일치하지 않음
+해결 : pom.xml에 mysql-connector-java 버전을 수정
+예시 : 
+	<dependency>
+		<groupId>mysql</groupId>
+		<artifactId>mysql-connector-java</artifactId>
+		<version>8.0.11</version>
+	</dependency>
+
+
+nested exception is org.springframework.jdbc.BadSqlGrammarException
+원인 : Mapper에서 잘못된 쿼리문 설정
+해결 : 올바른 쿼리문으로 수정
+
+
+nested exception is org.springframework.dao.DuplicateKeyException
+원인 : 있는 기본키를 다시 등록하려고 할 때 발생
+해결 : 예외처리
+
