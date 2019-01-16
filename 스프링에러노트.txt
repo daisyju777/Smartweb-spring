@@ -1,0 +1,13 @@
+﻿HTTP Status 404 - Not Found
+Type Status Report
+Description The origin server did not find a current
+원인 : 컨트롤러에 URI에 맞는 RequestMapping값이 없어서 생기는 에러
+해결 : 컨트롤러에 해당 URI를 담당하는 메소드 추가
+
+
+HTTP Status 404 - Not Found
+Type Status Report
+Message /spring/WEB-INF/views/test.jsp
+Description The origin server did not find a current 
+원인 : WEB-INF/views/ 경로에 test.jsp가 없어서
+해결 : WEB-INF/views/ 경로에 test.jsp를 추가
