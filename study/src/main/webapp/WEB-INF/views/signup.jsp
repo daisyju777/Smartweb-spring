@@ -1,0 +1,33 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>회원가입</h1>
+	<form action="<%=request.getContextPath() %>/signup" method="POST">
+		<div>
+			ID : <input type="text" name="id">
+		</div>
+		<div>
+			PASSWARD : <input type="password" name="pw">
+		</div>
+		<div>
+			E-MAIL : <input type="email" name="email">
+		</div>
+		<div>
+			GENDER : 
+			<input type="radio" name="gender" value="male" id="male" checked><label for="male">남성</label> 
+			<input type="radio" name="gender" value="female" id="female"><label for="female">여성</label>
+		</div>
+		<button>회원가입</button>
+	</form>
+	<script>
+		var signup=${signup};
+		if(signup==false) alert ("회원가입에 실패했습니다.");
+	</script>
+</body>
+</html>
