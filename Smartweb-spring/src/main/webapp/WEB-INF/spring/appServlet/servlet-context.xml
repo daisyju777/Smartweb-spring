@@ -23,6 +23,29 @@
 	
 	<context:component-scan base-package="kr.green.spring" />
 	
+	<beans:bean id="loginInterceptor" class="kr.green.spring.interceptor.LoginInterceptor"></beans:bean>
+	<beans:bean id="unauthInterceptor" class="kr.green.spring.interceptor.UnauthInterceptor"></beans:bean>
+	<beans:bean id="authInterceptor" class="kr.green.spring.interceptor.AuthInterceptor"></beans:bean>
 	
+	
+	<interceptors>
+		<!-- 나갈때 가로챔 -->
+	    <interceptor>
+	        <mapping path="/"/>   <!-- 경로가 / 일때 인터셉터를 추가함 로그인했을때 회원정보가 있으면 쎄션에 저장함. 그러므로 메인페이지에서만 작업하면됨. 페이지가 더 있다면 밑에 <mapping path="sign/"/>이런식으로 코드더 추가해주면됨 --> 
+	        <beans:ref bean="loginInterceptor"/>  <!-- 기본주소로 접속할때  위에 써준 id로 인터셉터를 실행함 -->
+	    </interceptor>
+	    
+	    <!-- 비회원만 메인페이지와 회원가입페이지에 접근할수있고 로그인한 사람들은 이 페이지에 접근하는것을 막아줌-->
+	    <!-- 들어올때 가로챔-->
+	   	<interceptor>
+	        <mapping path="/"/>
+	        <mapping path="/signup"/>
+	        <beans:ref bean="unauthInterceptor"/> 
+	    </interceptor>
+	    <interceptor>
+	    	<mapping path="/bbs/*"/>
+	        <beans:ref bean="authInterceptor"/> 
+	    </interceptor>
+	</interceptors>
 	
 </beans:beans>

@@ -6,4 +6,6 @@ public interface AccountService {
 	public AccountVo getAccount(String id);
 
 	public boolean signup(AccountVo accountVo);
+
+	public AccountVo signin(String id, String pw);
 }
