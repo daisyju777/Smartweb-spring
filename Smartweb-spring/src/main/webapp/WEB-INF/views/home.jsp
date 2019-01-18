@@ -8,9 +8,6 @@
 <h1>
 	Hello world!  
 </h1>
-
-<%-- 컨트롤러에서 전달한 데이터를 받기위해 ${컨트롤러에서 전달한 이름}을 사용한다. --%>
-<P>  The time on the server is ${serverTime}. </P>
 <!-- jsp에서 컨트롤러로 데이터를 전달하려면 form태그를 이용 -->
 <form method="post" action="<%=request.getContextPath() %>/">   
 <!-- 액션에 따로 주소를 지정해 주지 않으면 브라우저 주소창에 입력해준 /?name=홍길동 이 들어감. 유관순을 입력하고 제출하주면
@@ -21,5 +18,6 @@ jsp에서 넘어온 값: 홍길동,유관순 이 콘솔창에 뜸. 그러므로 
 	<input type="text" name="name">
 	<button>제출</button>
 </form>
+<a href="<%=request.getContextPath() %>/signup">회원가입</a>
 </body>
 </html>

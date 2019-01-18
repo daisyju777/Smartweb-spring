@@ -9,8 +9,8 @@
     select * from account where id = #{id} <!-- 쿼리문에서는 # JSP에서는 달러사용. dao의  매개변수 값과 일치해야함 -->
   </select>
   <insert id="insertAccount">
-  	insert 
-  		INTO account (id, pw, email)
-  		VALUES (#{id}, #{pw}, #{email})   <!-- 앞에 해당 객체 이름을 붙여줄 필요없이 멤버변수 이름 그대로 써주면 됨. -->
+  	insert into 
+  		account (id, pw, email, gender, authority)
+  		values (#{id}, #{pw}, #{email}, #{gender}, #{authority})   <!-- 앞에 해당 객체 이름을 붙여줄 필요없이 멤버변수 이름 그대로 써주면 됨. -->
   </insert>
 </mapper>

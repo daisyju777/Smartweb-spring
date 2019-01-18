@@ -27,6 +27,7 @@ public class AccountServiceimp implements AccountService{
 		String id = accountVo.getId();
 		AccountVo tmp = accountDao.getAccount(id);
 		if(tmp == null) {
+			accountVo.setAuthority("user");
 			accountDao.insertAccount(accountVo);
 			return true;
 		} else
