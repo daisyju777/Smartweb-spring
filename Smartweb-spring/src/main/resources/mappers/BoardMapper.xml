@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.green.spring.dao.BoardDao">
+	<insert id="setBoard">
+		insert into board(title, content, writer)
+		values(#{board.title},#{board.content},#{board.writer})
+	</insert>
+	<select id="getBoards" resultType="kr.green.spring.vo.BoardVo">
+		select * from board order by id desc  <!-- 최신글 순으로 보여지도록 함 -->
+	</select>
+</mapper>

@@ -3,6 +3,7 @@
 <html>
 <head>
 	<title>Home</title>
+	<link rel="stylesheet" href="<%=request.getContextPath() %>/resources/css/bootstrap.css">
 </head>
 <body>
 <h1>
@@ -14,7 +15,7 @@ style="<c:if test="${user != null}">display:none;</c:if>">   <%-- c:if는 조건
 	<!-- 전달하려는 데이터가 있는 태그의 속성name을 입력한다. -->
 	<input type="text" name="id"><br>
 	<input type="password" name="pw"><br>
-	<button>로그인</button>
+	<button class="btn btn-primary">로그인</button>
 </form>
 <a href="<%=request.getContextPath() %>/signup">회원가입</a>
 </body>

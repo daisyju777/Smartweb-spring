@@ -8,7 +8,7 @@ import kr.green.spring.dao.AccountDao;
 import kr.green.spring.vo.AccountVo;
 
 @Service
-public class AccountServiceimp implements AccountService{
+public class AccountServiceImp implements AccountService{
 
 	/* Autowired는 객체 생성을 자동으로 해준다. */
 	@Autowired
